@@ -1,5 +1,12 @@
 # clujnio
 
+Currently some wrappers around Java file functionality.
+
+Will migrate to something which provides similar functionality, but also a lot
+more, in a richer way.
+
+## Direction
+
 CLojure Unified Java New I/O.
 
 A Clojure library designed to make it easy to use files from Clojure, without
