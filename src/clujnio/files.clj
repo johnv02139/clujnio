@@ -1,7 +1,7 @@
 
 (ns clujnio.files
   "Wrapper around Java file functionality."
-  (:require [clojure.string :refer [split replace] :rename {replace str-replace}])
+  (:require [clojure.string :as str])
   (:import (java.nio.file Path Paths Files)
            (java.io File)
            (java.net URI)))
@@ -13,7 +13,7 @@
 
 
 (defn- literalize-for-regex [s]
-  (str-replace s "\\" "\\\\"))
+  (str/replace s "\\" "\\\\"))
 
 (defn- fail [& rest]
   (apply printf rest)
@@ -30,7 +30,7 @@
 (def path-splitter (re-pattern file-separator-for-regex))
 
 (defn split-path [pth]
-  (split pth path-splitter))
+  (str/split pth path-splitter))
 
 
 (defn as-file [x]
@@ -66,7 +66,7 @@
 
 
 (defn normalize-pathstring [s]
-  (str-replace s  "/./" "/"))
+  (str/replace s  "/./" "/"))
 
 (defn make-file
   ([^String pathstring]
