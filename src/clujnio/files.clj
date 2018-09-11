@@ -33,6 +33,13 @@
   (str/split pth path-splitter))
 
 
+(defn split-filename [name]
+  (let [index? (str/last-index-of name \.)]
+    (if (nil? index?)
+      [name ""]
+      [(subs name 0 index?) (subs name index?)])))
+
+
 (defn as-file [x]
   (if (instance? File x) x (File. x)))
 
