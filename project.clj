@@ -1,4 +1,4 @@
-(defproject clujnio "0.0.1-SNAPSHOT"
+(defproject clujnio "0.0.2-SNAPSHOT"
   :description "Provide the concept of a 'file' in Clojure"
   :url "https://github.com/johnv02139/clujnio"
   :license {:name "Eclipse Public License"
